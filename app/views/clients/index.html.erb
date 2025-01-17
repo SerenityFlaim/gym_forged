@@ -1,0 +1,14 @@
+<h1>Clients</h1>
+
+<%= link_to "Add new client", new_client_path %>
+
+<div id="clients">
+    <% @clients.each do |client|%>
+        <div>
+            <%= link_to client.fullname, client %>
+            <%= client.birthday%>
+            <%= client.phone%>
+            <%= client.email%>
+        </div>
+    <% end %>
+</div>

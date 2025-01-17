@@ -1,0 +1,15 @@
+<h1><%= @client.fullname %></h1>
+<div>
+    <%= @client.fullname%>
+</div>
+<div>
+    <%= @client.birthday%>
+</div>
+<div>
+    <%= @client.phone%>
+</div>
+<div>
+    <%= @client.email%>
+</div>
+<%= link_to "Back", clients_path %>
+<%= link_to "Edit", edit_client_path(@client) %>
