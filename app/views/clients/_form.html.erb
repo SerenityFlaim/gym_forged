@@ -1,0 +1,22 @@
+<%= form_with model: client do |form| %>
+    <div>
+        <%= form.label :fullname %>
+        <%= form.text_field :fullname %>
+    </div>
+    <div>
+        <%= form.label :birthday %>
+        <%= form.date_field :birthday %>
+    </div>
+    <div>
+        <%= form.label :phone %>
+        <%= form.text_field :phone %>
+    </div>
+    <div>
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
