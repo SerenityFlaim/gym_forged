@@ -16,7 +16,7 @@ class ClientsController < ApplicationController
     if @client.save
       redirect_to @client
     else
-      render :new, status: :unprocessible_entity
+      render :new, status: :unprocessable_entity
     end
   end
 

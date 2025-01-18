@@ -27,7 +27,7 @@ class InstructorsController < ApplicationController
     if @instructor.update(instructor_params)
       redirect_to @instructor
     else
-      render :edit, status: :unprocessible_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 

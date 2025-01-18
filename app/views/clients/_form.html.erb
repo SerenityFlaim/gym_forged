@@ -1,4 +1,13 @@
 <%= form_with model: client do |form| %>
+    <% if client.errors.any? %>
+        <div class="errors">
+            <ul>
+                <% client.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
     <div>
         <%= form.label :fullname %>
         <%= form.text_field :fullname %>

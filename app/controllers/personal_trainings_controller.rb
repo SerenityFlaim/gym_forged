@@ -1,5 +1,6 @@
 class PersonalTrainingsController < ApplicationController
   before_action :set_training, only: %i[ show edit update destroy ]
+  before_action :set_clients_and_instructors, only: %i[new edit]
   def index
     @personal_trainings = PersonalTraining.all
   end
@@ -10,8 +11,6 @@ class PersonalTrainingsController < ApplicationController
 
   def new
     @personal_training = PersonalTraining.new
-    @clients = Client.all
-    @instructors = Instructor.all
   end
 
   def create
@@ -30,7 +29,7 @@ class PersonalTrainingsController < ApplicationController
     if @personal_training.update(personal_training_params)
       redirect_to @personal_training
     else
-      render :edit, status: :unprocessible_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -46,5 +45,10 @@ class PersonalTrainingsController < ApplicationController
 
   def personal_training_params
     params.expect(personal_training: [ :client_id, :instructor_id, :price, :duration, :schedule ])
+  end
+
+  def set_clients_and_instructors
+    @clients = Client.all
+    @instructors = Instructor.all
   end
 end
