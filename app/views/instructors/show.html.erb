@@ -1,0 +1,18 @@
+<section class="instructor">
+    <h1><%= @instructor.fullname %></h1>
+
+    <section class="instructor-info">
+        <div>
+            <%= @instructor.fullname%>
+        </div>
+        <div>
+            <%= @instructor.experience%>
+        </div>
+        <div>
+            <%= @instructor.qualification%>
+        </div>
+    </section>
+</section>
+<p><%= link_to "Back", instructors_path %></p>
+<%= link_to "Edit", edit_instructor_path(@instructor) %>
+<%= button_to "Delete", @instructor, method: :delete, data: { turbo_confirm: "All of the data about this instructor will be deleted. Are you sure?"} %>

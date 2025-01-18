@@ -1,0 +1,13 @@
+<h1>Instructors</h1>
+
+<%= link_to "Add new instructor", new_instructor_path %>
+
+<div id="instructors">
+    <% @instructors.each do |instructor|%>
+        <div>
+            <%= link_to instructor.fullname, instructor %>
+        </div>
+    <% end %>
+</div>
+
+<%= link_to "Home page", home_path %>

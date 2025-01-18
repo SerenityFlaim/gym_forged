@@ -1,0 +1,18 @@
+<%= form_with model: instructor do |form| %>
+    <div>
+        <%= form.label :fullname %>
+        <%= form.text_field :fullname %>
+    </div>
+    <div>
+        <%= form.label :experience %>
+        <%= form.number_field :experience, min: 1, max: 40, step: 1%>
+    </div>
+    <div>
+        <%= form.label :qualification %>
+        <%= form.text_field :qualification %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
