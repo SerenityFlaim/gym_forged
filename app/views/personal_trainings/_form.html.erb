@@ -1,0 +1,26 @@
+<%= form_with model: personal_training do |form| %>
+    <div>
+        <%= form.label :client_id %>
+        <%= form.collection_select :client_id, @clients, :id, :fullname, prompt: "Select a Client" %>
+    </div>
+    <div>
+        <%= form.label :instructor_id %>
+        <%= form.collection_select :instructor_id, @instructors, :id, :fullname, prompt: "Select an Instructor" %>
+    </div>
+    <div>
+        <%= form.label :price %>
+        <%= form.number_field :price%>
+    </div>
+    <div>
+        <%= form.label :duration %>
+        <%= form.number_field :duration %>
+    </div>
+    <div>
+        <%= form.label :schedule %>
+        <%= form.datetime_field :schedule %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

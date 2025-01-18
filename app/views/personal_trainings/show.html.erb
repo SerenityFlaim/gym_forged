@@ -1,0 +1,24 @@
+<section class="training">
+    <h1><%= @personal_training.schedule %></h1>
+
+    <section class="training-info">
+        <div>
+            <%= @personal_training.client.fullname%>
+        </div>
+        <div>
+            <%= @personal_training.instructor.fullname%>
+        </div>
+        <div>
+            <%= @personal_training.price%>
+        </div>
+        <div>
+            <%= @personal_training.duration%>
+        </div>
+        <div>
+            <%= @personal_training.schedule%>
+        </div>
+    </section>
+</section>
+<p><%= link_to "Back", personal_trainings_path %></p>
+<%= link_to "Edit", edit_personal_training_path(@personal_training) %>
+<%= button_to "Delete", @personal_training, method: :delete, data: { turbo_confirm: "All of the data about this personal_training will be deleted. Are you sure?"} %>
