@@ -1,13 +1,14 @@
 <h1>Personal Trainings</h1>
 
-<%= link_to "Add new training", new_personal_training_path %>
-
+<div class="link"><%= link_to "Add new training", new_personal_training_path %></div>
+<br>
 <div id="trainings">
     <% @personal_trainings.each do |personal_training|%>
-        <div>
+        <div class="link">
             <%= link_to personal_training.schedule, personal_training %>
         </div>
+        <br>
     <% end %>
 </div>
 
-<%= link_to "Home page", home_path %>
+<div class="link"><%= link_to "Home page", home_path %></div>

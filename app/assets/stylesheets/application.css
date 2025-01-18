@@ -2,8 +2,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 1rem;
   }
-  
-  nav {
+
+  /* nav {
     justify-content: flex-end;
     display: flex;
     font-size: 0.875em;
@@ -30,6 +30,73 @@ body {
     display: flex;
     gap: 1rem;
     flex-direction: column;
-  }
+  } */
 
-  
+
+.link_wrapper{
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.link a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 23px;
+  text-decoration: none;
+}
+
+.log_wrapper{
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.attr_wrapper{
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.attr_title{
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 23px;
+  text-decoration: none;
+}
+
+.attr_data{
+  padding-left: 5px;
+  height: 23px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 23px;
+  text-decoration: none;
+}
+
+.form_wrapper form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+  gap: 15px;
+}
+
+form button, form input{
+  font-size: 20px;
+}
+
+form button, form select{
+  font-size: 20px;
+}
+
+form button{
+  font-size: 20px;
+}
+
+a:hover {
+  color: crimson;
+}

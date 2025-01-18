@@ -1,24 +1,34 @@
-<section class="training">
-    <h1><%= @personal_training.schedule %></h1>
-
-    <section class="training-info">
-        <div>
-            <%= @personal_training.client.fullname%>
-        </div>
-        <div>
-            <%= @personal_training.instructor.fullname%>
-        </div>
-        <div>
-            <%= @personal_training.price%>
-        </div>
-        <div>
-            <%= @personal_training.duration%>
-        </div>
-        <div>
-            <%= @personal_training.schedule%>
-        </div>
-    </section>
-</section>
-<p><%= link_to "Back", personal_trainings_path %></p>
-<%= link_to "Edit", edit_personal_training_path(@personal_training) %>
-<%= button_to "Delete", @personal_training, method: :delete, data: { turbo_confirm: "All of the data about this personal_training will be deleted. Are you sure?"} %>
+<h1><%= @personal_training.schedule %></h1>
+<div class="attr_wrapper">
+    <p class="attr_title">client_fullname:</p>
+    <div class="attr_data">
+        <%= @personal_training.client.fullname%>
+    </div>
+</div>
+<div class="attr_wrapper">
+    <p class="attr_title">instructor_fullname:</p>
+    <div class="attr_data">
+        <%= @personal_training.instructor.fullname%>
+    </div>
+</div>
+<div class="attr_wrapper">
+    <p class="attr_title">price:</p>
+    <div class="attr_data">
+        <%= @personal_training.price%>
+    </div>
+</div>
+<div class="attr_wrapper">
+    <p class="attr_title">duration:</p>
+    <div class="attr_data">
+        <%= @personal_training.duration%>
+    </div>
+</div>
+<div class="attr_wrapper">
+    <p class="attr_title">schedule:</p>
+    <div class="attr_data">
+        <%= @personal_training.schedule%>
+    </div>
+</div>
+<p class="link"><%= link_to "Back", personal_trainings_path %></p>
+<p class="link"><%= link_to "Edit", edit_personal_training_path(@personal_training) %></p>
+<p><%= button_to "Delete", @personal_training, method: :delete, data: { turbo_confirm: "All of the data about this personal_training will be deleted. Are you sure?"} %></p>

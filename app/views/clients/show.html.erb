@@ -1,21 +1,22 @@
-<section class="client">
-    <h1><%= @client.fullname %></h1>
-
-    <section class="client-info">
-        <div>
-            <%= @client.fullname%>
-        </div>
-        <div>
-            <%= @client.birthday%>
-        </div>
-        <div>
-            <%= @client.phone%>
-        </div>
-        <div>
-            <%= @client.email%>
-        </div>
-    </section>
-</section>
-<p><%= link_to "Back", clients_path %></p>
-<%= link_to "Edit", edit_client_path(@client) %>
-<%= button_to "Delete", @client, method: :delete, data: { turbo_confirm: "All of the data about this client will be deleted. Are you sure?"} %>
+<h1><%= @client.fullname %></h1>
+<div class="attr_wrapper">
+    <p class="attr_title">birthday:</p>
+    <div class="attr_data">
+        <%= @client.birthday%>
+    </div>
+</div>
+<div class="attr_wrapper">
+    <p class="attr_title">phone:</p>
+    <div class="attr_data">
+        <%= @client.phone%>
+    </div>
+</div>
+<div class="attr_wrapper">
+    <p class="attr_title">email:</p>
+    <div class="attr_data">
+        <%= @client.email%>
+    </div>
+</div>
+<p class="link"><%= link_to "Back", clients_path %></p>
+<p class="link"><%= link_to "Edit", edit_client_path(@client) %></p>
+<p><%= button_to "Delete", @client, method: :delete, data: { turbo_confirm: "All of the data about this client will be deleted. Are you sure?"} %></p>
