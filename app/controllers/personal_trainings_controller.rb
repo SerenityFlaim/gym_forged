@@ -6,7 +6,6 @@ class PersonalTrainingsController < ApplicationController
   end
 
   def show
-    puts params.expect
   end
 
   def new
