@@ -8,4 +8,9 @@ class Client < ApplicationRecord
     with: /\A[\w+_.\-]+@[a-zA-Z.\-]+\.[a-zA-Z]{2,}\z/, 
     message: "must be a valid email address" 
   }
+
+  validates :fullname, presence: true, format: {
+     with: /\A([A-Za-z]+(?: [A-Za-z]+){1,2})\z/, 
+     message: "must be two or three words without numbers" 
+  }
 end
