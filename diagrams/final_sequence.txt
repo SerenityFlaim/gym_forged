@@ -1,0 +1,104 @@
+@startuml
+actor User as user
+participant "view:instructors/show.html" as u_show
+participant "view:instructors/edit.html" as edit
+participant "controller:instructors_controller.rb" as contr
+participant "model:instructor.rb" as model
+participant "@client:Client" as client
+participant "ActiveRecord" as active_rec
+database "DB" as db
+
+activate user
+user -> u_show : Open show.html
+activate u_show
+u_show --> user : Display entity
+deactivate u_show
+
+user -> u_show : Click "Edit" button
+activate u_show
+
+u_show -> contr : GET /instructors/:id/edit
+deactivate u_show
+activate contr
+
+contr -> model : Instructor.find(params[:id])
+activate model
+
+model -> db : SELECT "instructors".* FROM "instructors"\nWHERE "instructors"."id" = id
+activate db
+
+db --> model : Result record
+deactivate db
+
+model --> contr : Instructor
+deactivate model
+
+contr --> edit : Populate @instructor variable
+deactivate contr
+
+activate edit
+edit --> user : Display instructor
+
+user -> edit : Click "Update Instructor" button
+edit -> contr : PATCH /instructor/:id
+deactivate edit
+activate contr
+
+contr -> model : @instructor.update(instructor_params)
+activate model
+
+alt Validation success
+    model -> db : UPDATE "instructors" SET "experience" = 4\nWHERE "instructors"."id" = id
+    activate db
+
+    db --> model : Status indicator
+    deactivate db
+
+    model --> contr : Boolean
+    deactivate model
+
+    contr -> model : Instructor.find(params[:id])
+    activate model
+
+    model -> db : SELECT "instructors".* FROM "instructors"\nWHERE "instructors"."id" = id
+    activate db
+
+    db --> model : Result record
+    deactivate db
+
+    model --> contr : Instructor
+    deactivate model
+
+    contr --> u_show : Populate @instructor variable
+    deactivate contr
+
+    activate u_show
+    u_show --> user : Display updated entity
+    deactivate u_show
+
+else Validation failure
+    model -> model : validate?
+    activate model
+    activate model
+    model -> db : Does record with this email value exists?
+    db --> model : true
+    deactivate model
+    model --> contr : false
+    activate contr
+    deactivate model
+
+    contr --> u_show : @client
+    deactivate contr
+
+    activate u_show
+    u_show -> client : @client.errors
+    activate client
+    client --> u_show : errors object
+    deactivate client
+
+    u_show -> user : Display unique error
+    deactivate u_show
+end
+
+deactivate user
+@enduml
