@@ -1,21 +1,23 @@
-<h1>Personal Trainings</h1>
+<div class="page_wrapper">
+    <h1>Personal Trainings</h1>
 
-<div class="link"><%= link_to "Add new training", new_personal_training_path %></div>
-<br>
-<div id="trainings">
-    <% @personal_trainings.each do |personal_training|%>
-        <div class="link">
-            <%= link_to personal_training do %>
-                <div>
-                    <%=personal_training.schedule%>
-                    <%=personal_training.client.fullname%>
-                    |
-                    <%=personal_training.instructor.fullname%>
-                </div>
-            <% end %>
-        </div>
-        <br>
-    <% end %>
+    <div class="link"><%= link_to "Add new training", new_personal_training_path %></div>
+    <br>
+    <div id="trainings">
+        <% @personal_trainings.each do |personal_training|%>
+            <div class="link">
+                <%= link_to personal_training do %>
+                    <div>
+                        <%=personal_training.schedule%>
+                        <%=personal_training.client.fullname%>
+                        |
+                        <%=personal_training.instructor.fullname%>
+                    </div>
+                <% end %>
+            </div>
+            <br>
+        <% end %>
+    </div>
+
+    <div class="link"><%= link_to "Home page", home_path %></div>
 </div>
-
-<div class="link"><%= link_to "Home page", home_path %></div>

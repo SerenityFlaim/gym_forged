@@ -1,32 +1,34 @@
-<div class="form_wrapper"><%= form_with model: client do |form| %>
-    <% if client.errors.any? %>
-        <div class="errors">
-            <ul>
-                <% client.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-            </ul>
+<div class="page_wrapper">
+    <div class="form_wrapper"><%= form_with model: client do |form| %>
+        <% if client.errors.any? %>
+            <div class="errors">
+                <ul>
+                    <% client.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        <div>
+            <%= form.label :fullname %>
+            <%= form.text_field :fullname %>
         </div>
-    <% end %>
-    <div>
-        <%= form.label :fullname %>
-        <%= form.text_field :fullname %>
-    </div>
-    <div>
-        <%= form.label :birthday %>
-        <%= form.date_field :birthday %>
-    </div>
-    <div>
-        <%= form.label :phone %>
-        <%= form.telephone_field :phone %>
-    </div>
-    <div>
-        <%= form.label :email %>
-        <%= form.email_field :email %>
-    </div>
+        <div>
+            <%= form.label :birthday %>
+            <%= form.date_field :birthday %>
+        </div>
+        <div>
+            <%= form.label :phone %>
+            <%= form.telephone_field :phone %>
+        </div>
+        <div>
+            <%= form.label :email %>
+            <%= form.email_field :email %>
+        </div>
 
-    <div>
-        <%= form.submit %>
+        <div>
+            <%= form.submit %>
+        </div>
     </div>
+    <% end %>
 </div>
-<% end %>

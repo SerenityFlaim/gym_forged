@@ -1,34 +1,36 @@
-<h1><%= @personal_training.schedule %></h1>
-<div class="attr_wrapper">
-    <p class="attr_title">client_fullname:</p>
-    <div class="attr_data">
-        <%= @personal_training.client.fullname%>
+<div class="page_wrapper">
+    <h1><%= @personal_training.schedule %></h1>
+    <div class="attr_wrapper">
+        <p class="attr_title">client_fullname:</p>
+        <div class="attr_data">
+            <%= @personal_training.client.fullname%>
+        </div>
     </div>
-</div>
-<div class="attr_wrapper">
-    <p class="attr_title">instructor_fullname:</p>
-    <div class="attr_data">
-        <%= @personal_training.instructor.fullname%>
+    <div class="attr_wrapper">
+        <p class="attr_title">instructor_fullname:</p>
+        <div class="attr_data">
+            <%= @personal_training.instructor.fullname%>
+        </div>
     </div>
-</div>
-<div class="attr_wrapper">
-    <p class="attr_title">price:</p>
-    <div class="attr_data">
-        <%= @personal_training.price%>
+    <div class="attr_wrapper">
+        <p class="attr_title">price:</p>
+        <div class="attr_data">
+            <%= @personal_training.price%>
+        </div>
     </div>
-</div>
-<div class="attr_wrapper">
-    <p class="attr_title">duration:</p>
-    <div class="attr_data">
-        <%= @personal_training.duration%>
+    <div class="attr_wrapper">
+        <p class="attr_title">duration:</p>
+        <div class="attr_data">
+            <%= @personal_training.duration%>
+        </div>
     </div>
-</div>
-<div class="attr_wrapper">
-    <p class="attr_title">schedule:</p>
-    <div class="attr_data">
-        <%= @personal_training.schedule%>
+    <div class="attr_wrapper">
+        <p class="attr_title">schedule:</p>
+        <div class="attr_data">
+            <%= @personal_training.schedule%>
+        </div>
     </div>
+    <p class="link"><%= link_to "Back", personal_trainings_path %></p>
+    <p class="link"><%= link_to "Edit", edit_personal_training_path(@personal_training) %></p>
+    <p><%= button_to "Delete", @personal_training, method: :delete, data: { turbo_confirm: "All of the data about this personal_training will be deleted. Are you sure?"} %></p>
 </div>
-<p class="link"><%= link_to "Back", personal_trainings_path %></p>
-<p class="link"><%= link_to "Edit", edit_personal_training_path(@personal_training) %></p>
-<p><%= button_to "Delete", @personal_training, method: :delete, data: { turbo_confirm: "All of the data about this personal_training will be deleted. Are you sure?"} %></p>

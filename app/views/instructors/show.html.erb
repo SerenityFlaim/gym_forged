@@ -1,18 +1,20 @@
-<h1><%= @instructor.fullname %></h1>
+<div class="page_wrapper">
+    <h1><%= @instructor.fullname %></h1>
 
-<div class=attr_wrapper>
-    <p class="attr_title">experience:</p>
-    <div class="attr_data">
-        <%= @instructor.experience%>
+    <div class=attr_wrapper>
+        <p class="attr_title">experience:</p>
+        <div class="attr_data">
+            <%= @instructor.experience%>
+        </div>
     </div>
-</div>
-<div class=attr_wrapper>
-    <p class="attr_title">qualification:</p>
-    <div class="attr_data">
-        <%= @instructor.qualification%>
+    <div class=attr_wrapper>
+        <p class="attr_title">qualification:</p>
+        <div class="attr_data">
+            <%= @instructor.qualification%>
+        </div>
     </div>
+    <p class="link"><%= link_to "Back", instructors_path %></p>
+    <p class="link"><%= link_to "Edit", edit_instructor_path(@instructor) %></p>
+    <p class="link"><%= link_to 'View Trainings', trainings_instructor_path(@instructor) %></p>
+    <p><%= button_to "Delete", @instructor, method: :delete, data: { turbo_confirm: "All of the data about this instructor will be deleted. Are you sure?"} %></p>
 </div>
-<p class="link"><%= link_to "Back", instructors_path %></p>
-<p class="link"><%= link_to "Edit", edit_instructor_path(@instructor) %></p>
-<p class="link"><%= link_to 'View Trainings', trainings_instructor_path(@instructor) %></p>
-<p><%= button_to "Delete", @instructor, method: :delete, data: { turbo_confirm: "All of the data about this instructor will be deleted. Are you sure?"} %></p>

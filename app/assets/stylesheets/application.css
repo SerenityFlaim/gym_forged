@@ -47,6 +47,17 @@ body {
   text-decoration: none;
 }
 
+.data_cell{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  padding: 7px;
+}
+
+.data_row{
+  width: 50%;
+  border: 1px solid #000;
+}
+
 .form_wrapper form {
   display: flex;
   justify-content: center;
@@ -69,4 +80,11 @@ form button{
 
 a:hover {
   color: crimson;
+}
+
+.page_wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

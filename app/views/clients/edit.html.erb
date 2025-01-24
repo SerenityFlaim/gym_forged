@@ -1,4 +1,6 @@
-<h1>Edit client</h1>
+<div class="page_wrapper">
+    <h1>Edit client</h1>
 
-<%= render "form", client: @client %>
-<p class="link"><%= link_to "Cancel", @client %></p>
+    <%= render "form", client: @client, error_message: @error_message %>
+    <p class="link"><%= link_to "Cancel", @client %></p>
+</div>
