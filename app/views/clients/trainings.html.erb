@@ -1,0 +1,30 @@
+<h1>Все тренировки для <%= @client.fullname %></h1>
+
+<% if @trainings.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Schedule</th>
+        <th>Instructor</th>
+        <th>Price</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @trainings.each do |training| %>
+        <tr>
+          <td><%= training.schedule %></td>
+          <td><%= training.instructor.fullname %></td>
+          <td><%= training.price %></td>
+          <td><%= training.duration %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>This client has no personal trainings.</p>
+<% end %>
+
+<div class="link">
+  <%= link_to 'Back to Client', clients_path %>
+</div>

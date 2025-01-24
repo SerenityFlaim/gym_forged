@@ -19,4 +19,5 @@
 </div>
 <p class="link"><%= link_to "Back", clients_path %></p>
 <p class="link"><%= link_to "Edit", edit_client_path(@client) %></p>
+<p class="link"><%= link_to 'View Trainings', trainings_client_path(@client) %></p>
 <p><%= button_to "Delete", @client, method: :delete, data: { turbo_confirm: "All of the data about this client will be deleted. Are you sure?"} %></p>

@@ -3,36 +3,6 @@ body {
     padding: 1rem;
   }
 
-  /* nav {
-    justify-content: flex-end;
-    display: flex;
-    font-size: 0.875em;
-    gap: 0.5rem;
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  nav a {
-    display: inline-block;
-  }
-  
-  main {
-    max-width: 1024px;
-    margin: 0 auto;
-  }
-  
-  .notice {
-    color: green;
-  }
-  
-  section.client {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
-  } */
-
-
 .link_wrapper{
   height: 100px;
   display: flex;

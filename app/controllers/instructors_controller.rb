@@ -1,5 +1,5 @@
 class InstructorsController < ApplicationController
-  before_action :set_instructor, only: %i[ show edit update destroy ]
+  before_action :set_instructor, only: %i[ show edit update destroy trainings]
   def index
     @instructors = Instructor.all
   end
@@ -34,6 +34,10 @@ class InstructorsController < ApplicationController
   def destroy
     @instructor.destroy
     redirect_to instructors_path
+  end
+
+  def trainings
+    @trainings = @instructor.personal_trainings
   end
 
   private

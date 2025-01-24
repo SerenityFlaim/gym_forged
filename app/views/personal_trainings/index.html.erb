@@ -5,7 +5,14 @@
 <div id="trainings">
     <% @personal_trainings.each do |personal_training|%>
         <div class="link">
-            <%= link_to personal_training.schedule, personal_training %>
+            <%= link_to personal_training do %>
+                <div>
+                    <%=personal_training.schedule%>
+                    <%=personal_training.client.fullname%>
+                    |
+                    <%=personal_training.instructor.fullname%>
+                </div>
+            <% end %>
         </div>
         <br>
     <% end %>

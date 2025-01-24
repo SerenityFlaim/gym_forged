@@ -2,7 +2,7 @@ class PersonalTrainingsController < ApplicationController
   before_action :set_training, only: %i[ show edit update destroy ]
   before_action :set_clients_and_instructors, only: %i[new edit]
   def index
-    @personal_trainings = PersonalTraining.all
+    @personal_trainings = PersonalTraining.includes(:client, :instructor).all
   end
 
   def show

@@ -8,9 +8,8 @@ class DatabaseErrorHandler
       @app.call(env)
     rescue ActiveRecord::ConnectionNotEstablished, PG::ConnectionBad => e
       Rails.logger.error "Database connection error: #{e.message}"
-      # Serve the static error page
       return [
-        503, # HTTP status for Service Unavailable
+        503,
         { "Content-Type" => "text/html" },
         [File.read(Rails.root.join("public/503.html"))]
       ]
